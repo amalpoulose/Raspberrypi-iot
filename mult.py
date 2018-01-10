@@ -21,7 +21,7 @@ MOTOR =20
 PIR=21
 WARNING=12
 #Twilio initialization
-client=Client("AC66a94e35bf41165d8d12888f5f59345a","e58e238a3cb43758095af57b0be63edb") 
+client=Client("ACxxxxxxxxxxxxxxxxxxxxxxx9345a","e58e238xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxb0be63edb") 
 
 
 q=Queue()
@@ -50,7 +50,7 @@ def init():
         #change default action of SIGCHLD
 	signal.signal(signal.SIGCHLD,handler1)
 
-	pubnub = Pubnub(publish_key='pub-c-08e906fb-45bf-4180-94f1-2e054d86def3', subscribe_key='sub-c-a58a3736-f4fc-11e7-9869-a6bd95f83dd1')
+	pubnub = Pubnub(publish_key='pub-xxxxxxxxxxxxxxxxxxxxxxxxxxxx', subscribe_key='sub-c-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 	#initialize adc
 	spi.adc_setup()
 	return pubnub
@@ -121,8 +121,8 @@ def main():
 		pubnub.publish(channel1, data, callback=callback, error=callback)
 	        GPIO.output(BULB,False)
 		message=client.messages.create(
-					to="+918281985856",
-					from_="+14152379832",
+					to="+919446047003",
+					from_="+141xxxxxx32",
 					body="Light is turning on at "+t)
 		print message.sid
 	        bulb_flg=1
@@ -176,8 +176,8 @@ def main():
 		pubnub.publish(channel1, data, callback=callback, error=callback)
 	        GPIO.output(FAN,False)
 		message=client.messages.create(
-					to="+918281985856",
-					from_="+14152379832",
+					to="+918075946770",
+					from_="+14xxxxxxxxxxxxxxxxx32",
 					body="AC is turning on at "+t+"\ntemperature : "+str(tem) )
 		print message.sid
 	        fan_flg=1
@@ -207,8 +207,8 @@ def main():
 		pubnub.publish(channel1, data, callback=callback, error=callback)
 	        GPIO.output(WARNING,False)
 		message=client.messages.create(
-					to="+918281985856",
-					from_="+14152379832",
+					to="+919446047003",
+					from_="+141xxxxxx2",
 					body="Some one at Home \n\nTime: "+t )
 		time.sleep(10)
 	        GPIO.output(WARNING,True)
