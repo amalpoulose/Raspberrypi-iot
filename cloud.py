@@ -17,7 +17,7 @@ BULB = 23
 TAP=24
 FAN = 16
 MOTOR =20
-client=Client("AC66a94e35bf41165d8d12888f5f59345a","e58e238a3cb43758095af57b0be63edb")
+client=Client("AC66axxxxxxxxxxxxxxxxxxxx","e58exxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 
 def init():
 	GPIO.setmode (GPIO.BCM)
@@ -36,7 +36,7 @@ def init():
         #change default action of SIGCHLD
 	signal.signal(signal.SIGCHLD,handler1)
 
-	pubnub = Pubnub(publish_key='pub-c-08e906fb-45bf-4180-94f1-2e054d86def3', subscribe_key='sub-c-a58a3736-f4fc-11e7-9869-a6bd95f83dd1')
+	pubnub = Pubnub(publish_key='*********', subscribe_key='**********')
 	#initialize adc
 	spi.adc_setup()
 	return pubnub
@@ -153,7 +153,7 @@ def main():
 	        GPIO.output(FAN,False)
 		message=client.messages.create(
 					to="+918281985856",
-					from_="+14152379832",
+					from_="+1415xxxxxx32",
 					body="AC is turning on at "+t)
 		print message.sid
 	   sys.exit(0)	
