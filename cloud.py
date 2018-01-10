@@ -119,8 +119,8 @@ def main():
 		pubnub.publish(channel1, data, callback=callback, error=callback)
 	        GPIO.output(BULB,False)
 		message=client.messages.create(
-					to="+918281985856",
-					from_="+14152379832",
+					to="+919446047003",
+					from_="+1415xxxxx32",
 					body="Light is turning on at "+t)
 		print message.sid
 	   sys.exit(0)	
@@ -152,7 +152,7 @@ def main():
 		pubnub.publish(channel1, data, callback=callback, error=callback)
 	        GPIO.output(FAN,False)
 		message=client.messages.create(
-					to="+918281985856",
+					to="+918075946770",
 					from_="+1415xxxxxx32",
 					body="AC is turning on at "+t)
 		print message.sid
