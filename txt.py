@@ -15,5 +15,5 @@ def main():
 		sys.exit(-1)
 	data={"data":sys.argv[1]}
 	pub.publish(channel,data,callback=callback,error=callback)
-
-main()
+if __name__=="__main__":
+	main()
